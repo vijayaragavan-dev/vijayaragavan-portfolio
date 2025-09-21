@@ -24,6 +24,12 @@
       "description": "College Portal project image",
       "imageUrl": "https://picsum.photos/seed/college-portal-professional/600/400",
       "imageHint": "education dashboard"
+    },
+    {
+      "id": "project-mood-destination",
+      "description": "AI Mood-Based Destination Finder project image",
+      "imageUrl": "https://picsum.photos/seed/ai-mood-finder/600/400",
+      "imageHint": "travel map"
     }
   ]
 }

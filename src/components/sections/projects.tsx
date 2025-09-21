@@ -26,6 +26,14 @@ const projects = [
     demoUrl: '#',
     sourceUrl: 'https://github.com/vijayaragavan11'
   },
+  {
+    title: 'AI Mood-Based Destination Finder',
+    description: 'An innovative application that recommends travel destinations based on your current mood, powered by AI.',
+    techStack: ['Next.js', 'React', 'Genkit', 'Tailwind CSS'],
+    image: PlaceHolderImages.find(img => img.id === 'project-mood-destination'),
+    demoUrl: '#',
+    sourceUrl: 'https://github.com/vijayaragavan11'
+  }
 ];
 
 function ProjectCard({ project, delay }: { project: typeof projects[0], delay: number }) {
