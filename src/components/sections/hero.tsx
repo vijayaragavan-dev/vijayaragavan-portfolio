@@ -35,7 +35,7 @@ export function HeroSection() {
       </div>
 
       <a
-        href="#about"
+        href="#projects"
         aria-label="Scroll to next section"
         className="absolute bottom-8 left-1/2 -translate-x-1/2"
       >
