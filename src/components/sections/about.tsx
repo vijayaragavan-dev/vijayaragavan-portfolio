@@ -13,7 +13,6 @@ const timeline = [
 ];
 
 export function AboutSection() {
-  const profileImage = PlaceHolderImages.find(img => img.id === 'profile-image');
 
   return (
     <section id="about" className="py-24 sm:py-32 bg-secondary">
@@ -29,16 +28,14 @@ export function AboutSection() {
         <div className="grid md:grid-cols-3 gap-12 items-center">
           <AnimateInView className="md:col-span-1 flex justify-center" delay={200}>
             <div className="relative group">
-              {profileImage && (
-                <Image
-                  src={profileImage.imageUrl}
-                  alt={profileImage.description}
-                  width={250}
-                  height={250}
-                  className="rounded-full object-cover border-4 border-primary/50 transition-transform duration-500 ease-in-out group-hover:rotate-6"
-                  data-ai-hint={profileImage.imageHint}
-                />
-              )}
+              <Image
+                src="https://images.unsplash.com/photo-1623854182493-9c41743a6c17?q=80&w=400&h=400&fit=crop"
+                alt="Vijayaragavan's profile picture"
+                width={250}
+                height={250}
+                className="rounded-full object-cover border-4 border-primary/50 transition-transform duration-500 ease-in-out group-hover:rotate-6"
+                data-ai-hint="portrait man"
+              />
               <div className="absolute inset-0 rounded-full border-4 border-primary animate-pulse" />
             </div>
           </AnimateInView>
