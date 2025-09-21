@@ -39,7 +39,7 @@ export function Footer() {
           {/* Column 2: Quick Links */}
           <div className="space-y-4">
             <h4 className="font-semibold text-lg text-foreground">Quick Links</h4>
-            <ul className="space-y-2">
+            <ul className="flex flex-wrap gap-x-4 gap-y-2">
               {navLinks.map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className="text-muted-foreground hover:text-primary transition-colors duration-300">
