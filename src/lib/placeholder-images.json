@@ -22,8 +22,8 @@
     {
       "id": "project-college-portal",
       "description": "College Portal project image",
-      "imageUrl": "https://picsum.photos/seed/collegeportal/600/400",
-      "imageHint": "college portal"
+      "imageUrl": "https://picsum.photos/seed/education/600/400",
+      "imageHint": "education dashboard"
     }
   ]
 }
