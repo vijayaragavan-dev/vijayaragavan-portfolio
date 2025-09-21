@@ -10,6 +10,7 @@ import { AnimateInView } from '../animate-in-view';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import { TypewriterEffect } from '../typewriter';
 
 const socialLinks = [
   { icon: Linkedin, href: 'https://www.linkedin.com/in/vijaya-ragavan-17a344370/', name: 'LinkedIn' },
@@ -69,9 +70,7 @@ export function ContactSection() {
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl font-headline transition-all duration-300 hover:text-glow hover:scale-105">
             Get In Touch
           </h2>
-          <p className="mt-4 max-w-2xl mx-auto text-muted-foreground md:text-xl">
-            Have a project in mind or just want to say hi? Feel free to reach out.
-          </p>
+          <TypewriterEffect words={["Have a project in mind or just want to say hi? Feel free to reach out."]} />
         </AnimateInView>
 
         <div className="grid md:grid-cols-2 gap-12">

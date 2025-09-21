@@ -4,6 +4,8 @@ import { AnimateInView } from '../animate-in-view';
 import { ArrowRight, ChevronDown } from 'lucide-react';
 import { TypewriterEffect } from '../typewriter';
 
+const words = ['A Developer', 'A Programmer', 'A Tech Enthusiast'];
+
 export function HeroSection() {
   return (
     <section id="home" className="relative w-full h-[100dvh] flex items-center justify-center overflow-hidden">
@@ -17,7 +19,7 @@ export function HeroSection() {
           </h1>
         </AnimateInView>
         <AnimateInView delay={200}>
-          <TypewriterEffect />
+          <TypewriterEffect words={words} staticText="I am" />
         </AnimateInView>
         <AnimateInView delay={400} className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
           <Button asChild size="lg" className="group transition-transform duration-300 ease-in-out hover:scale-105">
