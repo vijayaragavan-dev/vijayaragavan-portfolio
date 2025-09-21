@@ -38,7 +38,7 @@ export function Footer() {
 
           {/* Column 2: Quick Links */}
           <div className="space-y-4">
-            <h4 className="font-semibold text-lg text-foreground">Quick Links</h4>
+            <h4 className="font-semibold text-lg text-foreground transition-all duration-300 hover:text-glow hover:scale-105">Quick Links</h4>
             <ul className="flex flex-wrap gap-x-4 gap-y-2">
               {navLinks.map((link) => (
                 <li key={link.href}>
@@ -52,7 +52,7 @@ export function Footer() {
 
           {/* Column 3: Contact Info */}
           <div className="space-y-4">
-            <h4 className="font-semibold text-lg text-foreground">Get in Touch</h4>
+            <h4 className="font-semibold text-lg text-foreground transition-all duration-300 hover:text-glow hover:scale-105">Get in Touch</h4>
             <ul className="space-y-3 text-muted-foreground">
               <li className="flex items-start gap-3">
                 <Mail className="h-5 w-5 mt-1 shrink-0 text-primary"/>
@@ -71,7 +71,7 @@ export function Footer() {
 
           {/* Column 4: Social Media */}
           <div className="space-y-4">
-            <h4 className="font-semibold text-lg text-foreground">Connect With Me</h4>
+            <h4 className="font-semibold text-lg text-foreground transition-all duration-300 hover:text-glow hover:scale-105">Connect With Me</h4>
             <div className="flex gap-4">
               {socialLinks.map(({ icon: Icon, href, name }) => (
                 <Link key={name} href={href} target="_blank" rel="noopener noreferrer" aria-label={name}>
