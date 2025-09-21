@@ -1,6 +1,6 @@
 'use client';
 
-import { useActionState, useEffect, useRef, useState } from 'react';
+import { useActionState, useEffect, useRef } from 'react';
 import { useFormStatus } from 'react-dom';
 import Link from 'next/link';
 import { ArrowRight, Github, Instagram, Linkedin, Loader2, Mail, Phone } from 'lucide-react';
@@ -45,11 +45,6 @@ export function ContactSection() {
   const [state, formAction] = useActionState(submitContactForm, initialState);
   const { toast } = useToast();
   const formRef = useRef<HTMLFormElement>(null);
-  
-  // To prevent showing stale errors
-  const [nameError, setNameError] = useState<string | undefined>(undefined);
-  const [emailError, setEmailError] = useState<string | undefined>(undefined);
-  const [messageError, setMessageError] = useState<string | undefined>(undefined);
 
   useEffect(() => {
     if (state.message) {
@@ -59,13 +54,7 @@ export function ContactSection() {
           description: state.message,
         });
         formRef.current?.reset();
-        setNameError(undefined);
-        setEmailError(undefined);
-        setMessageError(undefined);
       } else {
-        setNameError(state.errors?.name?.[0]);
-        setEmailError(state.errors?.email?.[0]);
-        setMessageError(state.errors?.message?.[0]);
         // Only show toast if there are no field-specific errors
         if (!state.errors) {
             toast({
@@ -95,24 +84,24 @@ export function ContactSection() {
               <div className="space-y-2">
                 <Label htmlFor="name">Your Name</Label>
                 <Input id="name" name="name" placeholder="Your Name" required className="bg-secondary h-12 text-base"/>
-                {nameError && <p className="text-sm text-destructive">{nameError}</p>}
+                {state.errors?.name && <p className="text-sm text-destructive">{state.errors.name}</p>}
               </div>
               <div className="space-y-2">
                 <Label htmlFor="email">Your Email</Label>
                 <Input id="email" name="email" type="email" placeholder="Your Email" required className="bg-secondary h-12 text-base"/>
-                {emailError && <p className="text-sm text-destructive">{emailError}</p>}
+                {state.errors?.email && <p className="text-sm text-destructive">{state.errors.email}</p>}
               </div>
               <div className="space-y-2">
                 <Label htmlFor="message">Your Message</Label>
                 <Textarea id="message" name="message" placeholder="Your Message" rows={5} required className="bg-secondary text-base"/>
-                {messageError && <p className="text-sm text-destructive">{messageError}</p>}
+                {state.errors?.message && <p className="text-sm text-destructive">{state.errors.message}</p>}
               </div>
               <SubmitButton />
             </form>
           </AnimateInView>
           <AnimateInView delay={400} className="space-y-8">
             <div>
-              <h3 className="text-2xl font-semibold mb-4 font-headline transition-all duration-300 hover:text-glow hover:scale-105">Connect with me</h3>
+              <TypewriterEffect words={["Connect with me"]} as="h3" className="text-2xl font-semibold mb-4 font-headline text-left" />
               <div className="flex flex-wrap gap-4">
                 {socialLinks.map(({ icon: Icon, href, name }, index) => (
                   <AnimateInView key={href} delay={500 + index * 100} animationClass="opacity-0 scale-50">
