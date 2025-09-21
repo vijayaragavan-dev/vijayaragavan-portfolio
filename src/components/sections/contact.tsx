@@ -11,6 +11,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { TypewriterEffect } from '../typewriter';
+import { Label } from '../ui/label';
 
 const socialLinks = [
   { icon: Linkedin, href: 'https://www.linkedin.com/in/vijaya-ragavan-17a344370/', name: 'LinkedIn' },
@@ -78,15 +79,18 @@ export function ContactSection() {
             <h3 className="text-2xl font-semibold mb-6 font-headline transition-all duration-300 hover:text-glow hover:scale-105">Contact Me</h3>
             <form ref={formRef} action={formAction} className="space-y-6">
               <div className="space-y-2">
-                <Input name="name" placeholder="Your Name" required className="bg-secondary h-12 text-base"/>
+                <Label htmlFor="name">Your Name</Label>
+                <Input id="name" name="name" placeholder="Your Name" required className="bg-secondary h-12 text-base"/>
                 {state.errors?.name && <p className="text-sm text-destructive">{state.errors.name[0]}</p>}
               </div>
               <div className="space-y-2">
-                <Input name="email" type="email" placeholder="Your Email" required className="bg-secondary h-12 text-base"/>
+                <Label htmlFor="email">Your Email</Label>
+                <Input id="email" name="email" type="email" placeholder="Your Email" required className="bg-secondary h-12 text-base"/>
                 {state.errors?.email && <p className="text-sm text-destructive">{state.errors.email[0]}</p>}
               </div>
               <div className="space-y-2">
-                <Textarea name="message" placeholder="Your Message" rows={5} required className="bg-secondary text-base"/>
+                <Label htmlFor="message">Your Message</Label>
+                <Textarea id="message" name="message" placeholder="Your Message" rows={5} required className="bg-secondary text-base"/>
                 {state.errors?.message && <p className="text-sm text-destructive">{state.errors.message[0]}</p>}
               </div>
               <SubmitButton />
