@@ -35,7 +35,7 @@ export function AboutSection() {
                   alt={profileImage.description}
                   width={250}
                   height={250}
-                  className="rounded-full object-cover border-4 border-primary/50 animate-spin-slow group-hover:animate-none"
+                  className="rounded-full object-cover border-4 border-primary/50 transition-transform duration-500 ease-in-out group-hover:rotate-6"
                   data-ai-hint={profileImage.imageHint}
                 />
               )}
