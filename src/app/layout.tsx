@@ -5,6 +5,7 @@ import { cn } from '@/lib/utils';
 import { Toaster } from '@/components/ui/toaster';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
+import { ScrollIndicator } from '@/components/scroll-indicator';
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -33,6 +34,7 @@ export default function RootLayout({
         <main className="flex-grow">{children}</main>
         <Footer />
         <Toaster />
+        <ScrollIndicator />
       </body>
     </html>
   );
