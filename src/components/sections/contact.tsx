@@ -22,7 +22,7 @@ const socialLinks = [
 function SubmitButton() {
   const { pending } = useFormStatus();
   return (
-    <Button type="submit" size="lg" disabled={pending} className="group w-full">
+    <Button type="submit" size="lg" disabled={pending} className="group w-full transition-all duration-300 ease-in-out hover:button-glow active:scale-95">
       {pending ? (
         <>
           <Loader2 className="mr-2 h-5 w-5 animate-spin" />
