@@ -25,12 +25,12 @@ const skillCategories = [
   {
     title: 'Databases',
     icon: <Database className="h-8 w-8 text-primary" />,
-    skills: ['MySQL', 'MongoDB'],
+    skills: ['MySQL', 'MongoDB', 'Firebase'],
   },
   {
     title: 'Other Tools',
     icon: <Code className="h-8 w-8 text-primary" />,
-    skills: ['Git', 'GitHub'],
+    skills: ['Git', 'GitHub', 'Linux'],
   },
 ];
 
