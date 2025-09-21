@@ -12,9 +12,9 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 
 const socialLinks = [
-  { icon: Linkedin, href: 'https://www.linkedin.com/in/vijayaragavan-r', name: 'LinkedIn' },
-  { icon: Github, href: 'https://github.com/vijayaragavan11', name: 'GitHub' },
-  { icon: Instagram, href: 'https://www.instagram.com/vijay_aragavan', name: 'Instagram' },
+  { icon: Linkedin, href: 'https://www.linkedin.com/in/vijaya-ragavan-17a344370/', name: 'LinkedIn' },
+  { icon: Github, href: 'https://github.com/vijayaragavan-dev', name: 'GitHub' },
+  { icon: Instagram, href: 'https://www.instagram.com/v_ragavan_og/', name: 'Instagram' },
   { icon: Phone, href: 'tel:+919361093738', name: 'Mobile' },
   { icon: Mail, href: 'mailto:vijayaragavanvk10@gmail.com', name: 'Email' },
 ];
