@@ -76,7 +76,7 @@ export function ContactSection() {
 
         <div className="grid md:grid-cols-2 gap-12">
           <AnimateInView delay={200}>
-            <h3 className="text-2xl font-semibold mb-6 font-headline">Contact Me</h3>
+            <h3 className="text-2xl font-semibold mb-6 font-headline transition-all duration-300 hover:text-glow hover:scale-105">Contact Me</h3>
             <form ref={formRef} action={formAction} className="space-y-6">
               <div className="space-y-2">
                 <Input name="name" placeholder="Your Name" required className="bg-secondary h-12 text-base"/>
