@@ -36,7 +36,7 @@ export function Header() {
       href={href}
       target={external ? '_blank' : undefined}
       rel={external ? 'noopener noreferrer' : undefined}
-      className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+      className="text-base font-medium text-muted-foreground transition-all duration-300 hover:text-primary hover:text-glow hover:scale-105"
       onClick={() => setMobileMenuOpen(false)}
     >
       {label}
