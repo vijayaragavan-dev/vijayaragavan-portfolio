@@ -26,15 +26,17 @@ export default function RootLayout({
     <html lang="en" className="dark">
       <body
         className={cn(
-          'min-h-screen bg-background font-body text-foreground antialiased',
+          'min-h-screen font-body text-foreground antialiased',
           spaceGrotesk.variable
         )}
       >
-        <Header />
-        <main className="flex-grow">{children}</main>
-        <Footer />
-        <Toaster />
-        <ScrollIndicator />
+        <div className='bg-background'>
+            <Header />
+            <main className="flex-grow">{children}</main>
+            <Footer />
+            <Toaster />
+            <ScrollIndicator />
+        </div>
       </body>
     </html>
   );
