@@ -61,7 +61,7 @@ export function AboutSection() {
                    <AnimateInView key={index} delay={700 + index * 100} className="relative">
                      <div className="absolute -left-[37px] top-1.5 h-4 w-4 rounded-full bg-primary" />
                       <p className="text-sm text-muted-foreground">{item.date}</p>
-                      <h4 className="font-semibold text-lg">{item.title}</h4>
+                      <h4 className="font-semibold text-lg transition-all duration-300 hover:font-bold hover:text-glow hover:scale-105">{item.title}</h4>
                       <p className="text-sm font-medium text-primary">{item.institution}</p>
                       <p className="mt-1 text-sm text-muted-foreground">{item.description}</p>
                    </AnimateInView>
