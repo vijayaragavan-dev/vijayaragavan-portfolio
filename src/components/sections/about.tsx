@@ -29,7 +29,7 @@ export function AboutSection() {
           <AnimateInView className="md:col-span-1 flex justify-center" delay={200}>
             <div className="relative group">
               <Image
-                src="https://images.unsplash.com/photo-1623854182493-9c41743a6c17?q=80&w=400&h=400&fit=crop"
+                src="/pfp.jpg"
                 alt="Vijayaragavan's profile picture"
                 width={250}
                 height={250}
