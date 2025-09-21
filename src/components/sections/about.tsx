@@ -41,7 +41,7 @@ export function AboutSection() {
           </AnimateInView>
           <div className="md:col-span-2 space-y-8">
             <AnimateInView delay={400}>
-              <h3 className="text-2xl font-semibold font-headline">Who I Am</h3>
+              <h3 className="text-2xl font-semibold font-headline transition-all duration-300 hover:text-glow hover:scale-105">Who I Am</h3>
               <p className="mt-2 text-muted-foreground">
                 I am <span className="text-primary font-semibold">Vijay Ragavan</span>, an enthusiastic <span className="text-primary font-semibold">Computer Science and Engineering student</span> with strong foundations in <span className="text-primary font-semibold">C, C++, Python, and Java</span>, and growing expertise in <span className="text-primary font-semibold">full-stack web development</span>.
                 <br/><br/>
@@ -55,7 +55,7 @@ export function AboutSection() {
               </p>
             </AnimateInView>
             <AnimateInView delay={600}>
-              <h3 className="text-2xl font-semibold font-headline">Education</h3>
+              <h3 className="text-2xl font-semibold font-headline transition-all duration-300 hover:text-glow hover:scale-105">Education</h3>
               <div className="relative mt-4 space-y-8 pl-6 before:absolute before:inset-y-0 before:w-px before:bg-border before:left-0">
                 {timeline.map((item, index) => (
                    <AnimateInView key={index} delay={700 + index * 100} className="relative">
