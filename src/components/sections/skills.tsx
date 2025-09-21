@@ -7,7 +7,7 @@ const skillCategories = [
   {
     title: 'Frontend',
     icon: <Braces className="h-8 w-8 text-primary" />,
-    skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Next.js', 'Tailwind CSS'],
+    skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Bootstrap', 'Tailwind CSS'],
   },
   {
     title: 'Backend',
