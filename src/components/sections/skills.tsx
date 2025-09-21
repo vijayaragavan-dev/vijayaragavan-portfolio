@@ -1,13 +1,18 @@
 import { AnimateInView } from '../animate-in-view';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Code, Database, Braces, Globe, Server, Bot } from 'lucide-react';
+import { Code, Database, Braces, Globe, Server, Bot, Terminal } from 'lucide-react';
 
 const skillCategories = [
   {
+    title: 'Programming Languages',
+    icon: <Terminal className="h-8 w-8 text-primary" />,
+    skills: ['Java', 'Python', 'C', 'C++', 'JavaScript'],
+  },
+  {
     title: 'Frontend',
     icon: <Braces className="h-8 w-8 text-primary" />,
-    skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Bootstrap', 'Tailwind CSS'],
+    skills: ['HTML', 'CSS', 'React', 'Bootstrap', 'Tailwind CSS'],
   },
   {
     title: 'Backend',
@@ -22,7 +27,7 @@ const skillCategories = [
   {
     title: 'Other Tools',
     icon: <Code className="h-8 w-8 text-primary" />,
-    skills: ['Git', 'GitHub', 'Java'],
+    skills: ['Git', 'GitHub'],
   },
 ];
 
@@ -40,7 +45,7 @@ export function SkillsSection() {
           </p>
         </AnimateInView>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 max-w-7xl mx-auto">
           {skillCategories.map((category, index) => (
             <AnimateInView key={category.title} delay={200 * (index + 1)}>
               <Card className="bg-card border-2 border-border h-full group hover:border-primary transition-all duration-300 transform hover:-translate-y-2">
