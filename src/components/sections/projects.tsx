@@ -61,8 +61,8 @@ function ProjectCard({ project, delay }: { project: typeof projects[0], delay: n
         ref={ref}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
-        className="group relative overflow-hidden rounded-xl border-2 border-border bg-card transition-all duration-200 ease-out"
-        style={{ transformStyle: 'preserve-3d', transition: 'transform 0.2s ease-out' }}
+        className="group relative overflow-hidden rounded-xl border-2 border-border bg-card transition-all duration-200 ease-out hover:border-primary hover:shadow-2xl hover:shadow-primary/20"
+        style={{ transformStyle: 'preserve-3d', transition: 'transform 0.2s ease-out, box-shadow 0.2s ease-out, border-color 0.2s ease-out' }}
       >
         <CardContent className="p-0">
           {project.image && (
@@ -113,7 +113,7 @@ export function ProjectsSection() {
             A selection of my work. Hover over the cards for a little magic.
           </p>
         </AnimateInView>
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
           {projects.map((project, index) => (
             <ProjectCard key={project.title} project={project} delay={200 * (index + 1)} />
           ))}
