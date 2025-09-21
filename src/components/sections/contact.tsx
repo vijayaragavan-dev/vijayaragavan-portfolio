@@ -16,7 +16,7 @@ const socialLinks = [
   { icon: Github, href: 'https://github.com/vijayaragavan11', name: 'GitHub' },
   { icon: Instagram, href: 'https://www.instagram.com/vijay_aragavan', name: 'Instagram' },
   { icon: Phone, href: 'tel:+919361093738', name: 'Mobile' },
-  { icon: Mail, href: 'mailto:vijayaragavanr1100@gmail.com', name: 'Email' },
+  { icon: Mail, href: 'mailto:vijayaragavanvk10@gmail.com', name: 'Email' },
 ];
 
 function SubmitButton() {
@@ -110,8 +110,8 @@ export function ContactSection() {
             </div>
              <div>
               <h3 className="text-2xl font-semibold mb-2 font-headline">Email</h3>
-              <a href="mailto:vijayaragavanr1100@gmail.com" className="text-lg text-muted-foreground hover:text-primary transition-colors duration-300">
-                vijayaragavanr1100@gmail.com
+              <a href="mailto:vijayaragavanvk10@gmail.com" className="text-lg text-muted-foreground hover:text-primary transition-colors duration-300">
+                vijayaragavanvk10@gmail.com
               </a>
             </div>
             <div>
