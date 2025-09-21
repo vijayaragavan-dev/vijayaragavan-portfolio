@@ -5,16 +5,10 @@ import { Card, CardContent } from '@/components/ui/card';
 
 const timeline = [
   {
-    date: '2021 - 2025',
-    title: 'B.Tech in Information Technology',
-    institution: 'University College of Engineering, Pattukkottai',
-    description: 'Pursuing a comprehensive curriculum in IT with a focus on software development, data structures, and algorithms.',
-  },
-  {
-    date: '2020 - 2021',
-    title: 'HSC (Higher Secondary Certificate)',
-    institution: 'St. Antony\'s Higher Secondary School, Thanjavur',
-    description: 'Completed my higher secondary education with a focus on computer science and mathematics.',
+    date: '2024 - 2028 (Expected)',
+    title: 'Bachelor of Engineering (B.E.) in Computer Science and Engineering',
+    institution: 'Saranathan College of Engineering, Panjappur, Trichy',
+    description: 'Core focus on Computer Science fundamentals, Data Structures & Algorithms, Object-Oriented Programming, Web Development, and Software Engineering. Actively involved in academic projects, coding practices, and technical workshops to strengthen problem-solving and development skills. Gained proficiency in C, C++, Java, Python, HTML, CSS, JavaScript, and modern web technologies. Exploring advanced topics including cloud computing, database management, system design, and AI concepts.',
   },
 ];
 
@@ -64,7 +58,7 @@ export function AboutSection() {
               </p>
             </AnimateInView>
             <AnimateInView delay={600}>
-              <h3 className="text-2xl font-semibold font-headline">Education & Experience</h3>
+              <h3 className="text-2xl font-semibold font-headline">Education</h3>
               <div className="relative mt-4 space-y-8 pl-6 before:absolute before:inset-y-0 before:w-px before:bg-border before:left-0">
                 {timeline.map((item, index) => (
                    <AnimateInView key={index} delay={700 + index * 100} className="relative">
