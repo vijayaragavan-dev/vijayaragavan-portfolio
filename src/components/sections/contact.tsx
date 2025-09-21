@@ -95,7 +95,7 @@ export function ContactSection() {
           </AnimateInView>
           <AnimateInView delay={400} className="space-y-8">
             <div>
-              <h3 className="text-2xl font-semibold mb-4 font-headline">Connect with me</h3>
+              <h3 className="text-2xl font-semibold mb-4 font-headline transition-all duration-300 hover:text-glow hover:scale-105">Connect with me</h3>
               <div className="flex flex-wrap gap-4">
                 {socialLinks.map(({ icon: Icon, href, name }, index) => (
                   <AnimateInView key={href} delay={500 + index * 100} animationClass="opacity-0 scale-50">
