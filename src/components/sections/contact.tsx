@@ -115,7 +115,7 @@ export function ContactSection() {
               </a>
             </div>
             <div>
-              <h3 className="text-2xl font-semibold mb-4 font-headline">My Resume</h3>
+              <h3 className="text-2xl font-semibold mb-4 font-headline transition-all duration-300 hover:text-glow hover:scale-105">My Resume</h3>
               <Button asChild size="lg" variant="outline" className="group">
                 <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer">
                   Download Resume
