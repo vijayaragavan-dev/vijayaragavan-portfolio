@@ -59,7 +59,7 @@ function SkillCard({ category, delay }: { category: typeof skillCategories[0], d
         ref={ref}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
-        className="bg-card border-2 border-border h-full group hover:border-primary transition-all duration-300"
+        className="bg-card border-2 border-border h-full group hover:border-primary transition-all duration-300 rounded-md hover:shadow-lg hover:shadow-primary/20"
         style={{ transformStyle: 'preserve-3d', transition: 'transform 0.2s ease-out' }}
       >
         <CardHeader className="flex flex-col items-center text-center gap-4">
