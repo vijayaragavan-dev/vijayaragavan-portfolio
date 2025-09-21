@@ -20,8 +20,10 @@ const navLinks = [
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
+    setIsMounted(true);
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
@@ -49,11 +51,15 @@ export function Header() {
       )}
     >
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
-        <Logo />
-        <p className="hidden md:block text-sm font-semibold text-primary animate-pulse">Portfolio</p>
+        <div className={cn('opacity-0', isMounted && 'fade-in-down')}>
+          <Logo />
+        </div>
+        <p className={cn('hidden md:block text-sm font-semibold text-primary animate-pulse opacity-0', isMounted && 'fade-in-down')} style={{animationDelay: '200ms'}}>Portfolio</p>
         <nav className="hidden items-center gap-6 md:flex">
-          {navLinks.map((link) => (
-            <NavLink key={link.href} {...link} />
+          {navLinks.map((link, index) => (
+            <div key={link.href} className={cn('opacity-0', isMounted && 'fade-in-down')} style={{animationDelay: `${400 + index * 100}ms`}}>
+              <NavLink {...link} />
+            </div>
           ))}
         </nav>
         <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
