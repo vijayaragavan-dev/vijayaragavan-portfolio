@@ -17,12 +17,12 @@ const skillCategories = [
   {
     title: 'Backend',
     icon: <Server className="h-8 w-8 text-primary" />,
-    skills: ['Spring Boot', 'Node.js', 'Firebase'],
+    skills: ['Spring Boot', 'Node.js'],
   },
   {
     title: 'Databases',
     icon: <Database className="h-8 w-8 text-primary" />,
-    skills: ['MySQL', 'MongoDB'],
+    skills: ['MySQL', 'MongoDB', 'Firebase'],
   },
   {
     title: 'Other Tools',
