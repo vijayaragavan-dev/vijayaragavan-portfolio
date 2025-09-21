@@ -10,8 +10,7 @@ const sections = ['home', 'projects', 'skills', 'contact'];
 export function ScrollIndicator() {
   const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
-  const isAtBottom = currentSectionIndex === sections.length - 1;
-
+  
   useEffect(() => {
     const timer = setTimeout(() => setIsVisible(true), 500);
 
@@ -48,9 +47,11 @@ export function ScrollIndicator() {
     };
   }, []);
 
+  const isAtBottom = currentSectionIndex === sections.length - 1;
+
   const handleClick = () => {
-    const nextIndex = (currentSectionIndex + 1) % sections.length;
-    const nextSectionId = isAtBottom ? sections[0] : sections[nextIndex];
+    const nextIndex = isAtBottom ? 0 : currentSectionIndex + 1;
+    const nextSectionId = sections[nextIndex];
     const nextSection = document.getElementById(nextSectionId);
     if (nextSection) {
       nextSection.scrollIntoView({ behavior: 'smooth' });
@@ -70,7 +71,7 @@ export function ScrollIndicator() {
         className="rounded-full w-14 h-14 shadow-lg button-glow transition-all duration-300 ease-in-out hover:scale-110 active:scale-95"
         aria-label={isAtBottom ? 'Scroll to top' : 'Scroll to next section'}
       >
-        <div className="relative w-6 h-6">
+        <div className="relative w-6 h-6 overflow-hidden">
           <ArrowUp
             className={cn(
               'absolute inset-0 transition-all duration-300 ease-in-out',
