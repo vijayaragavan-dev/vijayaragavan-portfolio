@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { AnimateInView } from '../animate-in-view';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, ChevronDown } from 'lucide-react';
 
 export function HeroSection() {
   return (
@@ -35,11 +35,13 @@ export function HeroSection() {
         </AnimateInView>
       </div>
 
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2">
-        <div className="w-6 h-10 border-2 border-muted-foreground rounded-full flex justify-center p-1">
-          <div className="w-1 h-2 bg-muted-foreground rounded-full animate-bounce"/>
-        </div>
-      </div>
+      <a
+        href="#about"
+        aria-label="Scroll to next section"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+      >
+        <ChevronDown className="h-8 w-8 text-muted-foreground animate-bounce hover:text-primary transition-colors" />
+      </a>
     </section>
   );
 }
