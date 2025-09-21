@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { AnimateInView } from '../animate-in-view';
 import { ArrowRight, ChevronDown } from 'lucide-react';
+import { TypewriterEffect } from '../typewriter';
 
 export function HeroSection() {
   return (
@@ -16,9 +17,7 @@ export function HeroSection() {
           </h1>
         </AnimateInView>
         <AnimateInView delay={200}>
-          <p className="mt-4 max-w-2xl mx-auto text-muted-foreground md:text-xl">
-            A passionate developer crafting modern, responsive, and performant web experiences from concept to deployment.
-          </p>
+          <TypewriterEffect />
         </AnimateInView>
         <AnimateInView delay={400} className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
           <Button asChild size="lg" className="group transition-transform duration-300 ease-in-out hover:scale-105">
