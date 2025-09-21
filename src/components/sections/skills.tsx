@@ -66,7 +66,7 @@ function SkillCard({ category, delay }: { category: typeof skillCategories[0], d
           <div className="p-3 bg-primary/10 rounded-full border-2 border-primary/30 group-hover:scale-110 group-hover:bg-primary/20 transition-all duration-300">
             {category.icon}
           </div>
-          <CardTitle className="text-xl font-bold">{category.title}</CardTitle>
+          <CardTitle className="text-xl font-bold transition-all duration-300 group-hover:text-glow group-hover:scale-105">{category.title}</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="flex flex-wrap justify-center gap-2">
