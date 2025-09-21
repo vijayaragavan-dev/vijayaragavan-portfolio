@@ -1,3 +1,29 @@
+
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero-image",
+      "description": "Hero section background image",
+      "imageUrl": "https://picsum.photos/seed/1000013408/1920/1080",
+      "imageHint": "abstract code"
+    },
+    {
+      "id": "profile-image",
+      "description": "Vijayaragavan's profile picture",
+      "imageUrl": "https://picsum.photos/seed/1000013409/400/400",
+      "imageHint": "portrait man"
+    },
+    {
+      "id": "project-portfolio",
+      "description": "Personal Portfolio project image",
+      "imageUrl": "https://picsum.photos/seed/1000013410/600/400",
+      "imageHint": "website portfolio"
+    },
+    {
+      "id": "project-college-portal",
+      "description": "College Portal project image",
+      "imageUrl": "https://picsum.photos/seed/collegeportal/600/400",
+      "imageHint": "college portal"
+    }
+  ]
 }

@@ -1,0 +1,131 @@
+'use client';
+
+import { useFormState, useFormStatus } from 'react-dom';
+import Link from 'next/link';
+import { Github, Linkedin, Instagram, Phone, Mail, ArrowRight, Loader2 } from 'lucide-react';
+import { AnimateInView } from '../animate-in-view';
+import { submitContactForm, ContactFormState } from '@/app/actions/contact';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Button } from '@/components/ui/button';
+import { useToast } from '@/hooks/use-toast';
+import { useEffect, useRef } from 'react';
+
+const socialLinks = [
+  { icon: Linkedin, href: 'https://www.linkedin.com/in/vijayaragavan-r', name: 'LinkedIn' },
+  { icon: Github, href: 'https://github.com/vijayaragavan11', name: 'GitHub' },
+  { icon: Instagram, href: 'https://www.instagram.com/vijay_aragavan', name: 'Instagram' },
+  { icon: Phone, href: 'tel:+919361093738', name: 'Mobile' },
+  { icon: Mail, href: 'mailto:vijayaragavanr1100@gmail.com', name: 'Email' },
+];
+
+function SubmitButton() {
+  const { pending } = useFormStatus();
+  return (
+    <Button type="submit" size="lg" disabled={pending} className="group w-full">
+      {pending ? (
+        <>
+          <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+          Sending...
+        </>
+      ) : (
+        <>
+          Send Message
+          <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+        </>
+      )}
+    </Button>
+  );
+}
+
+export function ContactSection() {
+  const initialState: ContactFormState = { success: false, message: '', errors: null };
+  const [state, formAction] = useFormState(submitContactForm, initialState);
+  const { toast } = useToast();
+  const formRef = useRef<HTMLFormElement>(null);
+
+  useEffect(() => {
+    if (state.message) {
+      if (state.success) {
+        toast({
+          title: 'Success!',
+          description: state.message,
+        });
+        formRef.current?.reset();
+      } else {
+        toast({
+          title: 'Error',
+          description: state.message,
+          variant: 'destructive',
+        });
+      }
+    }
+  }, [state, toast]);
+
+  return (
+    <section id="contact" className="py-24 sm:py-32">
+      <div className="container mx-auto px-4 md:px-6">
+        <AnimateInView className="mb-12 text-center">
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl font-headline">
+            Get In Touch
+          </h2>
+          <p className="mt-4 max-w-2xl mx-auto text-muted-foreground md:text-xl">
+            Have a project in mind or just want to say hi? Feel free to reach out.
+          </p>
+        </AnimateInView>
+
+        <div className="grid md:grid-cols-2 gap-12">
+          <AnimateInView delay={200}>
+            <h3 className="text-2xl font-semibold mb-6 font-headline">Contact Me</h3>
+            <form ref={formRef} action={formAction} className="space-y-6">
+              <div className="space-y-2">
+                <Input name="name" placeholder="Your Name" required className="bg-secondary h-12 text-base"/>
+                {state.errors?.name && <p className="text-sm text-destructive">{state.errors.name[0]}</p>}
+              </div>
+              <div className="space-y-2">
+                <Input name="email" type="email" placeholder="Your Email" required className="bg-secondary h-12 text-base"/>
+                {state.errors?.email && <p className="text-sm text-destructive">{state.errors.email[0]}</p>}
+              </div>
+              <div className="space-y-2">
+                <Textarea name="message" placeholder="Your Message" rows={5} required className="bg-secondary text-base"/>
+                {state.errors?.message && <p className="text-sm text-destructive">{state.errors.message[0]}</p>}
+              </div>
+              <SubmitButton />
+            </form>
+          </AnimateInView>
+          <AnimateInView delay={400} className="space-y-8">
+            <div>
+              <h3 className="text-2xl font-semibold mb-4 font-headline">Connect with me</h3>
+              <div className="flex flex-wrap gap-4">
+                {socialLinks.map(({ icon: Icon, href, name }, index) => (
+                  <AnimateInView key={href} delay={500 + index * 100} animationClass="opacity-0 scale-50">
+                    <Link href={href} target="_blank" rel="noopener noreferrer" aria-label={name}>
+                      <div className="group rounded-full p-3 bg-secondary border-2 border-transparent transition-all duration-300 hover:border-primary hover:bg-primary/10 hover:scale-110">
+                        <Icon className="h-7 w-7 text-muted-foreground transition-colors duration-300 group-hover:text-primary group-hover:icon-glow animate-float" />
+                      </div>
+                    </Link>
+                  </AnimateInView>
+                ))}
+              </div>
+            </div>
+             <div>
+              <h3 className="text-2xl font-semibold mb-2 font-headline">Email</h3>
+              <a href="mailto:vijayaragavanr1100@gmail.com" className="text-lg text-muted-foreground hover:text-primary transition-colors duration-300">
+                vijayaragavanr1100@gmail.com
+              </a>
+            </div>
+            <div>
+              <h3 className="text-2xl font-semibold mb-4 font-headline">My Resume</h3>
+              <Button asChild size="lg" variant="outline" className="group">
+                <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+                  Download Resume
+                  <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+                </Link>
+              </Button>
+            </div>
+          </AnimateInView>
+        </div>
+      </div>
+    </section>
+  );
+}
