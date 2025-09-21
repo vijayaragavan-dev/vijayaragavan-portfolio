@@ -11,9 +11,10 @@ interface TypewriterEffectProps {
   words: string[];
   className?: string;
   staticText?: string;
+  as?: keyof JSX.IntrinsicElements;
 }
 
-export function TypewriterEffect({ words, className, staticText }: TypewriterEffectProps) {
+export function TypewriterEffect({ words, className, staticText, as: Tag = 'p' }: TypewriterEffectProps) {
   const [wordIndex, setWordIndex] = useState(0);
   const [text, setText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
@@ -47,10 +48,10 @@ export function TypewriterEffect({ words, className, staticText }: TypewriterEff
   }, [text, isDeleting, wordIndex, words]);
 
   return (
-    <p className={cn("mt-4 max-w-2xl mx-auto text-muted-foreground md:text-xl", className)}>
+    <Tag className={cn("mt-4 max-w-2xl mx-auto text-muted-foreground md:text-xl", className)}>
       {staticText && <span>{staticText} </span>}
       <span className="text-primary text-glow">{text}</span>
       <span className="animate-pulse">|</span>
-    </p>
+    </Tag>
   );
 }
