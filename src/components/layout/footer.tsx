@@ -75,8 +75,8 @@ export function Footer() {
             <div className="flex gap-4">
               {socialLinks.map(({ icon: Icon, href, name }) => (
                 <Link key={name} href={href} target="_blank" rel="noopener noreferrer" aria-label={name}>
-                  <div className="group rounded-full p-3 bg-background border-2 border-border transition-all duration-300 hover:border-primary hover:bg-primary/10 hover:scale-110">
-                    <Icon className="h-6 w-6 text-muted-foreground transition-colors duration-300 group-hover:text-primary" />
+                  <div className="group rounded-full p-3 bg-background border-2 border-border transition-all duration-300 hover:border-primary hover:bg-primary/10 hover:scale-110 hover:-translate-y-1">
+                    <Icon className="h-6 w-6 text-muted-foreground transition-colors duration-300 group-hover:text-primary group-hover:icon-glow" />
                   </div>
                 </Link>
               ))}
