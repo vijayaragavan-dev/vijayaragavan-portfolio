@@ -55,11 +55,14 @@ export function ContactSection() {
         });
         formRef.current?.reset();
       } else {
-        toast({
-          title: 'Error',
-          description: state.message,
-          variant: 'destructive',
-        });
+        // Only show toast if there are no field-specific errors
+        if (!state.errors) {
+            toast({
+            title: 'Error',
+            description: state.message,
+            variant: 'destructive',
+            });
+        }
       }
     }
   }, [state, toast]);
