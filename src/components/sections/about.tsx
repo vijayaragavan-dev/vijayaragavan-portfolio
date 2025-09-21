@@ -19,7 +19,7 @@ export function AboutSection() {
     <section id="about" className="py-24 sm:py-32 bg-secondary">
       <div className="container mx-auto px-4 md:px-6">
         <AnimateInView className="mb-12 text-center">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl font-headline">
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl font-headline transition-all duration-300 hover:text-glow hover:scale-105">
             About Me
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-muted-foreground md:text-xl">
