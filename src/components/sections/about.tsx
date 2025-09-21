@@ -25,21 +25,8 @@ export function AboutSection() {
             A glimpse into my journey and background.
           </p>
         </AnimateInView>
-        <div className="grid md:grid-cols-3 gap-12 items-center">
-          <AnimateInView className="md:col-span-1 flex justify-center" delay={200}>
-            <div className="relative group">
-              <Image
-                src="/pfp.jpg"
-                alt="Vijayaragavan's profile picture"
-                width={250}
-                height={250}
-                className="rounded-full object-cover border-4 border-primary/50 transition-transform duration-500 ease-in-out group-hover:rotate-6"
-                data-ai-hint="portrait man"
-              />
-              <div className="absolute inset-0 rounded-full border-4 border-primary animate-pulse" />
-            </div>
-          </AnimateInView>
-          <div className="md:col-span-2 space-y-8">
+        <div className="grid md:grid-cols-1 gap-12 items-center">
+          <div className="space-y-8">
             <AnimateInView delay={400}>
               <h3 className="text-2xl font-semibold font-headline transition-all duration-300 hover:text-glow hover:scale-105">Who I Am</h3>
               <p className="mt-2 text-muted-foreground">
