@@ -1,15 +1,15 @@
 'use client';
 
-import { useFormState, useFormStatus } from 'react-dom';
+import { useActionState, useEffect, useRef } from 'react';
+import { useFormStatus } from 'react-dom';
 import Link from 'next/link';
-import { Github, Linkedin, Instagram, Phone, Mail, ArrowRight, Loader2 } from 'lucide-react';
+import { ArrowRight, Github, Instagram, Linkedin, Loader2, Mail, Phone } from 'lucide-react';
+import { ContactFormState, submitContactForm } from '@/app/actions/contact';
+import { useToast } from '@/hooks/use-toast';
 import { AnimateInView } from '../animate-in-view';
-import { submitContactForm, ContactFormState } from '@/app/actions/contact';
+import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Button } from '@/components/ui/button';
-import { useToast } from '@/hooks/use-toast';
-import { useEffect, useRef } from 'react';
 
 const socialLinks = [
   { icon: Linkedin, href: 'https://www.linkedin.com/in/vijayaragavan-r', name: 'LinkedIn' },
@@ -40,7 +40,7 @@ function SubmitButton() {
 
 export function ContactSection() {
   const initialState: ContactFormState = { success: false, message: '', errors: null };
-  const [state, formAction] = useFormState(submitContactForm, initialState);
+  const [state, formAction] = useActionState(submitContactForm, initialState);
   const { toast } = useToast();
   const formRef = useRef<HTMLFormElement>(null);
 
