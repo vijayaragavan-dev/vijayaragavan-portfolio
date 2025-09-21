@@ -5,35 +5,55 @@ import { ArrowDown, ArrowUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
+const sections = ['home', 'projects', 'skills', 'contact'];
+
 export function ScrollIndicator() {
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
+  const isAtBottom = currentSectionIndex === sections.length - 1;
 
   useEffect(() => {
-    // A slight delay to prevent the button from appearing immediately on load
     const timer = setTimeout(() => setIsVisible(true), 500);
 
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = sections.findIndex((id) => id === entry.target.id);
+            if (index !== -1) {
+              setCurrentSectionIndex(index);
+            }
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
 
-    window.addEventListener('scroll', handleScroll);
+    sections.forEach((id) => {
+      const element = document.getElementById(id);
+      if (element) {
+        observer.observe(element);
+      }
+    });
+
     return () => {
       clearTimeout(timer);
-      window.removeEventListener('scroll', handleScroll);
+      sections.forEach((id) => {
+        const element = document.getElementById(id);
+        if (element) {
+          observer.unobserve(element);
+        }
+      });
+      observer.disconnect();
     };
   }, []);
 
   const handleClick = () => {
-    if (isScrolled) {
-      // Scroll to top
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    } else {
-      // Scroll to the next section (assumes first section is 'projects')
-      const nextSection = document.getElementById('projects');
-      if (nextSection) {
-        nextSection.scrollIntoView({ behavior: 'smooth' });
-      }
+    const nextIndex = (currentSectionIndex + 1) % sections.length;
+    const nextSectionId = isAtBottom ? sections[0] : sections[nextIndex];
+    const nextSection = document.getElementById(nextSectionId);
+    if (nextSection) {
+      nextSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -48,19 +68,19 @@ export function ScrollIndicator() {
         size="icon"
         onClick={handleClick}
         className="rounded-full w-14 h-14 shadow-lg button-glow transition-all duration-300 ease-in-out hover:scale-110 active:scale-95"
-        aria-label={isScrolled ? 'Scroll to top' : 'Scroll to next section'}
+        aria-label={isAtBottom ? 'Scroll to top' : 'Scroll to next section'}
       >
         <div className="relative w-6 h-6">
           <ArrowUp
             className={cn(
               'absolute inset-0 transition-all duration-300 ease-in-out',
-              isScrolled ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full'
+              isAtBottom ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full'
             )}
           />
           <ArrowDown
             className={cn(
               'absolute inset-0 transition-all duration-300 ease-in-out',
-              isScrolled ? 'opacity-0 translate-y-full' : 'opacity-100 translate-y-0'
+              isAtBottom ? 'opacity-0 translate-y-full' : 'opacity-100 translate-y-0'
             )}
           />
         </div>
