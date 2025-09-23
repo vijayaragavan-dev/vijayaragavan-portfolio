@@ -8,6 +8,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ExternalLink, Github } from 'lucide-react';
+import { TypewriterEffect } from '../typewriter';
 
 const projects = [
   {
@@ -109,9 +110,7 @@ export function ProjectsSection() {
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl font-headline transition-all duration-300 hover:text-glow hover:scale-105">
             My Projects
           </h2>
-          <p className="mt-4 max-w-2xl mx-auto text-muted-foreground md:text-xl">
-            A selection of my work. Hover over the cards for a little magic.
-          </p>
+          <TypewriterEffect words={["A selection of my work. Hover over the cards for a little magic."]} />
         </AnimateInView>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
           {projects.map((project, index) => (
