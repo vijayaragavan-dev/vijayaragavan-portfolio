@@ -25,7 +25,7 @@ const projects = [
     techStack: ['Spring Boot', 'React', 'MySQL', 'JWT'],
     image: PlaceHolderImages.find(img => img.id === 'project-college-portal'),
     demoUrl: '#',
-    sourceUrl: 'https://github.com/vijayaragavan11'
+    sourceUrl: 'https://github.com/vijayaragavan-dev/acad-flow-system?tab=readme-ov-file'
   },
   {
     title: 'AI Mood-Based Destination Finder',
