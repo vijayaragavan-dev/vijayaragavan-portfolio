@@ -1,11 +1,13 @@
 'use client';
 
 import { useRef, MouseEvent } from 'react';
+import Image from 'next/image';
 import { AnimateInView } from '../animate-in-view';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Terminal, Braces, Server, Database, Code } from 'lucide-react';
 import { TypewriterEffect } from '../typewriter';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 const skillCategories = [
   {
@@ -60,7 +62,7 @@ function SkillCard({ category, delay }: { category: typeof skillCategories[0], d
         ref={ref}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
-        className="bg-card border-2 border-border h-full group hover:border-primary transition-all duration-300 rounded-md hover:shadow-lg hover:shadow-primary/20"
+        className="bg-card/80 backdrop-blur-sm border-2 border-border h-full group hover:border-primary transition-all duration-300 rounded-md hover:shadow-lg hover:shadow-primary/20"
         style={{ transformStyle: 'preserve-3d', transition: 'transform 0.2s ease-out' }}
       >
         <CardHeader className="flex flex-col items-center text-center gap-4">
@@ -91,9 +93,20 @@ function SkillCard({ category, delay }: { category: typeof skillCategories[0], d
 
 
 export function SkillsSection() {
+  const skillsImage = PlaceHolderImages.find(img => img.id === 'skills-background');
   return (
-    <section id="skills" className="py-24 sm:py-32 bg-secondary">
-      <div className="container mx-auto px-4 md:px-6">
+    <section id="skills" className="relative py-24 sm:py-32 overflow-hidden">
+        {skillsImage && (
+            <Image
+            src={skillsImage.imageUrl}
+            alt={skillsImage.description}
+            fill
+            className="object-cover transition-transform duration-[5000ms] ease-out group-hover:scale-105"
+            data-ai-hint={skillsImage.imageHint}
+            />
+        )}
+        <div className="absolute inset-0 bg-background/80 backdrop-blur-sm" />
+      <div className="relative z-10 container mx-auto px-4 md:px-6">
         <AnimateInView className="mb-12 text-center">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl font-headline transition-all duration-300 hover:text-glow hover:scale-105">
             Technical Skills

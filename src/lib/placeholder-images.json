@@ -1,10 +1,9 @@
-
 {
   "placeholderImages": [
     {
       "id": "hero-image",
       "description": "Hero section background image",
-      "imageUrl": "https://picsum.photos/seed/1000013408/1920/1080",
+      "imageUrl": "https://images.unsplash.com/photo-1550439062-609e1531270e?q=80&w=1920&h=1080&fit=crop",
       "imageHint": "abstract code"
     },
     {
@@ -16,20 +15,26 @@
     {
       "id": "project-portfolio",
       "description": "Personal Portfolio project image",
-      "imageUrl": "https://picsum.photos/seed/1000013410/600/400",
+      "imageUrl": "https://images.unsplash.com/photo-1592839961631-0351c10a0b47?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx3ZWJzaXRlJTIwcG9ydGZvbGlvfGVufDB8fHx8MTc1ODYyNjA5N3ww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "website portfolio"
     },
     {
       "id": "project-college-portal",
       "description": "College Portal project image",
-      "imageUrl": "https://picsum.photos/seed/college-portal-professional/600/400",
+      "imageUrl": "https://images.unsplash.com/photo-1510872839600-90d6732f7300?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxlZHVjYXRpb24lMjBkYXNoYm9hcmR8ZW58MHx8fHwxNzU4NjM1NDk4fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "education dashboard"
     },
     {
       "id": "project-mood-destination",
       "description": "AI Mood-Based Destination Finder project image",
-      "imageUrl": "https://picsum.photos/seed/ai-mood-finder/600/400",
+      "imageUrl": "https://images.unsplash.com/photo-1578894381163-e72c17f2d45f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx0cmF2ZWwlMjBtYXB8ZW58MHx8fHwxNzU4NjE3MTY5fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "travel map"
+    },
+    {
+      "id": "skills-background",
+      "description": "Skills section background image",
+      "imageUrl": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1920&h=1080&fit=crop",
+      "imageHint": "tech computer"
     }
   ]
 }
