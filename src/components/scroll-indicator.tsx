@@ -5,7 +5,7 @@ import { ArrowDown, ArrowUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
-const sections = ['home', 'projects', 'skills', 'contact'];
+const sections = ['home', 'about', 'projects', 'skills', 'contact'];
 
 export function ScrollIndicator() {
   const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
