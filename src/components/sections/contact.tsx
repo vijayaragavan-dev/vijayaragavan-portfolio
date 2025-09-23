@@ -18,7 +18,6 @@ const socialLinks = [
   { icon: Github, href: 'https://github.com/vijayaragavan-dev', name: 'GitHub' },
   { icon: Instagram, href: 'https://www.instagram.com/v_ragavan_og/', name: 'Instagram' },
   { icon: Phone, href: 'tel:+919361093738', name: 'Mobile' },
-  { icon: Mail, href: 'mailto:vijayaragavanvk10@gmail.com', name: 'Email' },
 ];
 
 function SubmitButton() {
