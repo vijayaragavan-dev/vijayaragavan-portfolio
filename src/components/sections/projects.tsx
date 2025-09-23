@@ -32,8 +32,8 @@ const projects = [
     description: 'An innovative application that recommends travel destinations based on your current mood, powered by AI.',
     techStack: ['Next.js', 'React', 'Genkit', 'Tailwind CSS'],
     image: PlaceHolderImages.find(img => img.id === 'project-mood-destination'),
-    demoUrl: '#',
-    sourceUrl: 'https://github.com/vijayaragavan11'
+    demoUrl: 'https://triptell.vercel.app/',
+    sourceUrl: 'https://github.com/vijayaragavan-dev/nextjs-boilerplate'
   }
 ];
 
@@ -86,12 +86,12 @@ function ProjectCard({ project, delay }: { project: typeof projects[0], delay: n
             <div className="mt-6 flex gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-300">
               <Button asChild size="sm" variant="outline" className="bg-transparent text-white border-white hover:bg-white hover:text-black">
                 <Link href={project.demoUrl}>
-                  <ExternalLink className="mr-2 h-4 w-4" /> Demo
+                  <ExternalLink className="mr-2 h-4 w-4" /> View Demo
                 </Link>
               </Button>
               <Button asChild size="sm" variant="outline" className="bg-transparent text-white border-white hover:bg-white hover:text-black">
                 <Link href={project.sourceUrl} target="_blank">
-                  <Github className="mr-2 h-4 w-4" /> Source
+                  <Github className="mr-2 h-4 w-4" /> View Source
                 </Link>
               </Button>
             </div>
