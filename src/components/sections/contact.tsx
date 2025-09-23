@@ -68,8 +68,8 @@ export function ContactSection() {
   }, [state, toast]);
 
   return (
-    <section id="contact" className="py-24 sm:py-32">
-      <div className="container mx-auto px-4 md:px-6">
+    <section id="contact" className="py-24 sm:py-32 relative noise-bg">
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
         <AnimateInView className="mb-12 text-center">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl font-headline transition-all duration-300 hover:text-glow hover:scale-105">
             Get In Touch
