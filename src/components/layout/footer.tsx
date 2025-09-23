@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { ArrowUp, Mail, Phone, MapPin, Linkedin, Github, Code } from 'lucide-react';
 import { Logo } from '../logo';
+import { TypewriterEffect } from '../typewriter';
 
 const navLinks = [
   { href: '#home', label: 'Home' },
@@ -30,9 +31,7 @@ export function Footer() {
           {/* Column 1: Logo & Tagline */}
           <div className="space-y-4">
             <Logo />
-            <p className="text-muted-foreground text-sm">
-              Transforming ideas into scalable digital solutions.
-            </p>
+            <TypewriterEffect words={["Transforming ideas into scalable digital solutions."]} className="text-sm text-muted-foreground text-left mx-0 max-w-full mt-0" as="p" />
           </div>
 
           {/* Column 2: Quick Links */}
