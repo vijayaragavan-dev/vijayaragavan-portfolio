@@ -1,16 +1,30 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { AnimateInView } from '../animate-in-view';
 import { ArrowRight, ChevronDown } from 'lucide-react';
 import { TypewriterEffect } from '../typewriter';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 const words = ['A Developer', 'A Programmer', 'A Tech Enthusiast'];
 
 export function HeroSection() {
+  const heroImage = PlaceHolderImages.find(img => img.id === 'hero-image');
+
   return (
     <section id="home" className="relative w-full h-[100dvh] flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 noise-bg" />
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background" />
+      {heroImage && (
+        <Image
+          src={heroImage.imageUrl}
+          alt={heroImage.description}
+          fill
+          className="object-cover transition-transform duration-[5000ms] ease-out group-hover:scale-105"
+          data-ai-hint={heroImage.imageHint}
+          priority
+        />
+      )}
+      <div className="absolute inset-0 bg-black/60" />
+      <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
 
       <div className="relative z-10 container mx-auto px-4 text-center">
         <AnimateInView>
