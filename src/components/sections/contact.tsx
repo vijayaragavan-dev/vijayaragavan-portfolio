@@ -73,12 +73,12 @@ export function ContactSection() {
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl font-headline transition-all duration-300 hover:text-glow hover:scale-105">
             Get In Touch
           </h2>
-          <TypewriterEffect words={["Have a project in mind or just want to say hi? Feel free to reach out."]} />
+          <TypewriterEffect words={["Have a project in mind or just want to say hi? Feel free to reach out."]} runOnce />
         </AnimateInView>
 
         <div className="grid md:grid-cols-2 gap-12">
           <AnimateInView delay={200}>
-            <TypewriterEffect words={["Contact Me"]} as="h3" className="text-2xl font-semibold mb-6 font-headline text-left" />
+            <TypewriterEffect words={["Contact Me"]} as="h3" className="text-2xl font-semibold mb-6 font-headline text-left" runOnce />
             <form ref={formRef} action={formAction} className="space-y-6">
               <div className="space-y-2">
                 <Label htmlFor="name">Your Name</Label>
@@ -100,7 +100,7 @@ export function ContactSection() {
           </AnimateInView>
           <AnimateInView delay={400} className="space-y-8">
             <div>
-              <TypewriterEffect words={["Connect with me"]} as="h3" className="text-2xl font-semibold mb-4 font-headline text-left" />
+              <TypewriterEffect words={["Connect with me"]} as="h3" className="text-2xl font-semibold mb-4 font-headline text-left" runOnce />
               <div className="flex flex-wrap gap-4">
                 {socialLinks.map(({ icon: Icon, href, name }, index) => (
                   <AnimateInView key={href} delay={500 + index * 100} animationClass="opacity-0 scale-50">
@@ -114,13 +114,13 @@ export function ContactSection() {
               </div>
             </div>
              <div>
-              <TypewriterEffect words={["Email"]} as="h3" className="text-2xl font-semibold mb-2 font-headline text-left" />
+              <TypewriterEffect words={["Email"]} as="h3" className="text-2xl font-semibold mb-2 font-headline text-left" runOnce />
               <a href="mailto:vijayaragavanvk10@gmail.com" className="text-lg text-muted-foreground hover:text-primary transition-colors duration-300">
                 vijayaragavanvk10@gmail.com
               </a>
             </div>
             <div>
-              <TypewriterEffect words={["My Resume"]} as="h3" className="text-2xl font-semibold mb-4 font-headline text-left" />
+              <TypewriterEffect words={["My Resume"]} as="h3" className="text-2xl font-semibold mb-4 font-headline text-left" runOnce />
               <Button asChild size="lg" variant="outline" className="group">
                 <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer">
                   Download Resume

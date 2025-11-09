@@ -11,7 +11,7 @@ export function AboutSection() {
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl font-headline transition-all duration-300 hover:text-glow hover:scale-105">
             About Me
           </h2>
-          <TypewriterEffect words={["Hello, I am Vijay Ragavan"]} as="p" className="text-lg" />
+          <TypewriterEffect words={["Hello, I am Vijay Ragavan"]} as="p" className="text-lg" runOnce />
         </AnimateInView>
 
         <div className="grid md:grid-cols-2 gap-12 items-center">

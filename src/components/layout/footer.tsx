@@ -32,7 +32,7 @@ export function Footer() {
           {/* Column 1: Logo & Tagline */}
           <div className="space-y-4 lg:col-span-1 sm:col-span-2">
             <Logo />
-            <TypewriterEffect words={["Transforming ideas into scalable digital solutions."]} className="text-sm text-muted-foreground text-left mx-0 max-w-full mt-0" as="p" />
+            <TypewriterEffect words={["Transforming ideas into scalable digital solutions."]} className="text-sm text-muted-foreground text-left mx-0 max-w-full mt-0" as="p" runOnce />
           </div>
 
           {/* Column 2: Quick Links */}
