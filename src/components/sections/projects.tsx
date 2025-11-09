@@ -57,22 +57,22 @@ function ProjectCard({ project, delay }: { project: typeof projects[0], delay: n
   };
 
   return (
-    <AnimateInView delay={delay}>
+    <AnimateInView delay={delay} className="h-full">
       <Card
         ref={ref}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
-        className="group relative overflow-hidden rounded-xl border-2 border-border bg-card transition-all duration-200 ease-out hover:border-primary hover:shadow-2xl hover:shadow-primary/20"
+        className="group relative overflow-hidden rounded-xl border-2 border-border bg-card transition-all duration-200 ease-out hover:border-primary hover:shadow-2xl hover:shadow-primary/20 h-full flex flex-col"
         style={{ transformStyle: 'preserve-3d', transition: 'transform 0.2s ease-out, box-shadow 0.2s ease-out, border-color 0.2s ease-out' }}
       >
-        <CardContent className="p-0">
+        <CardContent className="p-0 relative flex-grow">
           {project.image && (
             <Image
               src={project.image.imageUrl}
               alt={project.title}
               width={600}
               height={400}
-              className="object-cover w-full h-auto transition-transform duration-500 group-hover:scale-110"
+              className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
               data-ai-hint={project.image.imageHint}
             />
           )}
