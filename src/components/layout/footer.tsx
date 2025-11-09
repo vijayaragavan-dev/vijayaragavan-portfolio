@@ -28,9 +28,9 @@ export function Footer() {
   return (
     <footer className="bg-secondary border-t border-border py-12 sm:py-16">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Column 1: Logo & Tagline */}
-          <div className="space-y-4">
+          <div className="space-y-4 lg:col-span-1 sm:col-span-2">
             <Logo />
             <TypewriterEffect words={["Transforming ideas into scalable digital solutions."]} className="text-sm text-muted-foreground text-left mx-0 max-w-full mt-0" as="p" />
           </div>
@@ -38,7 +38,7 @@ export function Footer() {
           {/* Column 2: Quick Links */}
           <div className="space-y-4">
             <h4 className="font-semibold text-lg text-foreground transition-all duration-300 hover:text-glow hover:scale-105">Quick Links</h4>
-            <ul className="flex flex-wrap gap-x-4 gap-y-2">
+            <ul className="space-y-2">
               {navLinks.map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className="text-muted-foreground hover:text-primary transition-colors duration-300">
