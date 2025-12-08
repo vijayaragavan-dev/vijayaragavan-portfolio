@@ -100,9 +100,7 @@
   }
 
   .noise-bg {
-    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800"><rect fill="%23121417" width="800" height="800"/><g fill-opacity="0.2"><circle fill="%23121417" cx="400" cy="400" r="600"/><circle fill="%232d3036" cx="400" cy="400" r="500"/><circle fill="%2325282d" cx="400" cy="400" r="400"/><circle fill="%231e2024" cx="400" cy="400" r="300"/><circle fill="%23191b1f" cx="400" cy="400" r="200"/><circle fill="%23121417" cx="400" cy="400" r="100"/></g></svg>');
-    background-size: cover;
-    background-position: 50% 50%;
+    background-image: radial-gradient(circle at top left, hsl(var(--secondary)), transparent 60%), radial-gradient(circle at bottom right, hsl(var(--accent) / 0.1), transparent 50%);
   }
 
   .fade-in-up {
