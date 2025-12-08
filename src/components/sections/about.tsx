@@ -13,18 +13,27 @@ export function AboutSection() {
     <section id="about" className="py-24 sm:py-32 bg-secondary/30 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-background via-secondary/20 to-background" />
       <div className="container mx-auto px-4 md:px-6 relative z-10">
+
+        {/* TITLE */}
         <AnimateInView className="mb-16 text-center">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl font-headline transition-all duration-300 hover:text-glow hover:scale-105">
             About Me
           </h2>
-          <TypewriterEffect words={["Hello, I am Vijayaragavan"]} as="p" className="text-lg" runOnce />
+          <TypewriterEffect
+            words={["Hello, I am Vijayaragavan"]}
+            as="p"
+            className="text-lg"
+            runOnce
+          />
         </AnimateInView>
 
         <div className="grid md:grid-cols-5 gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
-          {/* LEFT COLUMN: Image */}
+
+          {/* LEFT IMAGE */}
           <AnimateInView delay={200} className="md:col-span-2 flex justify-center">
             <div className="relative w-64 h-64 sm:w-80 sm:h-80 group">
               <div className="absolute inset-0 bg-primary rounded-full blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
+
               {profileImage && (
                 <div className="relative w-full h-full rounded-full overflow-hidden shadow-2xl shadow-primary/20 transform-gpu transition-transform duration-[10000ms] group-hover:rotate-[360deg] animate-float">
                   <Image
@@ -37,24 +46,57 @@ export function AboutSection() {
                   />
                 </div>
               )}
-               <div className="absolute inset-0 border-4 border-primary/50 rounded-full animate-pulse"></div>
+
+              <div className="absolute inset-0 border-4 border-primary/50 rounded-full animate-pulse" />
             </div>
           </AnimateInView>
 
-          {/* RIGHT COLUMN: Text */}
+          {/* RIGHT TEXT */}
           <AnimateInView delay={400} className="md:col-span-3">
-             <ScrollArea className="h-[250px] w-full pr-4">
-                <div className="space-y-6 text-center md:text-left p-4 rounded-lg transition-all duration-300 hover:scale-105 hover:bg-card/50">
-                    <h3 className="text-2xl font-semibold font-headline text-glow">A Passionate Developer on a Mission</h3>
-                    <p className="text-muted-foreground text-lg leading-relaxed">
-                    I am an enthusiastic and dedicated Computer Science Engineering student with a strong passion for developing innovative and efficient solutions. My journey in tech is driven by a constant curiosity and a desire to learn new technologies. I thrive on turning complex problems into beautiful, functional, and user-centric applications.
-                    </p>
-                    <p className="text-muted-foreground text-lg leading-relaxed">
-                    When I&apos;m not coding, I enjoy exploring the latest advancements in AI, contributing to open-source projects, and tackling challenges on platforms like LeetCode.
-                    </p>
-                </div>
+
+            {/* Scrollable Text */}
+            <ScrollArea className="h-[250px] w-full pr-4">
+              <div className="space-y-6 text-center md:text-left p-4 rounded-lg transition-all duration-300 hover:scale-105 hover:bg-card/50">
+                <h3 className="text-2xl font-semibold font-headline text-glow">
+                  A Passionate Developer on a Mission
+                </h3>
+
+                <p className="text-muted-foreground text-lg leading-relaxed">
+                  I am an enthusiastic and dedicated Computer Science Engineering student with a strong passion for developing innovative and efficient solutions. My journey in tech is driven by curiosity and a desire to learn new technologies. I enjoy building user-centric applications and solving complex problems through clean design.
+                </p>
+
+                <p className="text-muted-foreground text-lg leading-relaxed">
+                  When I'm not coding, I explore the latest advancements in AI, contribute to open-source projects, and solve challenges on platforms like LeetCode.
+                </p>
+              </div>
             </ScrollArea>
+
+            {/* RESUME BUTTONS (Add Here) */}
+            <div className="mt-8 flex gap-4 justify-center md:justify-start">
+              
+              {/* View Resume */}
+              <a
+                href="/v_ragavan_resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-3 bg-primary text-black rounded-md shadow hover:brightness-105 transition"
+              >
+                View Resume
+              </a>
+
+              {/* Download Resume */}
+              <a
+                href="/v_ragavan_resume.pdf"
+                download="Vijayaragavan_Resume.pdf"
+                className="inline-flex items-center gap-2 px-5 py-3 bg-card/80 text-white rounded-md border border-primary hover:opacity-90 transition"
+              >
+                Download Resume
+              </a>
+
+            </div>
+
           </AnimateInView>
+
         </div>
       </div>
     </section>
