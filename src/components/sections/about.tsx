@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { AnimateInView } from '@/components/animate-in-view';
 import { TypewriterEffect } from '@/components/typewriter';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { ScrollArea } from '../ui/scroll-area';
 
 export function AboutSection() {
   const profileImage = PlaceHolderImages.find(img => img.id === 'profile-image');
@@ -41,14 +42,18 @@ export function AboutSection() {
           </AnimateInView>
 
           {/* RIGHT COLUMN: Text */}
-          <AnimateInView delay={400} className="md:col-span-3 space-y-6 text-center md:text-left">
-            <h3 className="text-2xl font-semibold font-headline text-glow">A Passionate Developer on a Mission</h3>
-            <p className="text-muted-foreground text-lg leading-relaxed">
-              I am an enthusiastic and dedicated Computer Science Engineering student with a strong passion for developing innovative and efficient solutions. My journey in tech is driven by a constant curiosity and a desire to learn new technologies. I thrive on turning complex problems into beautiful, functional, and user-centric applications.
-            </p>
-            <p className="text-muted-foreground text-lg leading-relaxed">
-              When I&apos;m not coding, I enjoy exploring the latest advancements in AI, contributing to open-source projects, and tackling challenges on platforms like LeetCode.
-            </p>
+          <AnimateInView delay={400} className="md:col-span-3">
+             <ScrollArea className="h-[250px] w-full pr-4">
+                <div className="space-y-6 text-center md:text-left">
+                    <h3 className="text-2xl font-semibold font-headline text-glow">A Passionate Developer on a Mission</h3>
+                    <p className="text-muted-foreground text-lg leading-relaxed">
+                    I am an enthusiastic and dedicated Computer Science Engineering student with a strong passion for developing innovative and efficient solutions. My journey in tech is driven by a constant curiosity and a desire to learn new technologies. I thrive on turning complex problems into beautiful, functional, and user-centric applications.
+                    </p>
+                    <p className="text-muted-foreground text-lg leading-relaxed">
+                    When I&apos;m not coding, I enjoy exploring the latest advancements in AI, contributing to open-source projects, and tackling challenges on platforms like LeetCode.
+                    </p>
+                </div>
+            </ScrollArea>
           </AnimateInView>
         </div>
       </div>
