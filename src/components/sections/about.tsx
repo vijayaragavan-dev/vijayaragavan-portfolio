@@ -1,5 +1,6 @@
 'use client';
 
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { AnimateInView } from '@/components/animate-in-view';
 import { TypewriterEffect } from '@/components/typewriter';
@@ -7,10 +8,18 @@ import { ScrollArea } from '../ui/scroll-area';
 import placeholderData from '@/lib/placeholder-images.json';
 
 export function AboutSection() {
-    const profileImage = placeholderData.placeholderImages.find(
-    (img) => img.id === 'profile-image'
+  // find the profile image entry by ID
+  const profileImage = placeholderData.placeholderImages.find(
+    (img: { id: string }) => img.id === 'profile-image'
   );
 
+  // src state so we can fallback to /profile.jpg if the image fails to load
+  const [imgSrc, setImgSrc] = useState<string>(profileImage?.imageUrl ?? '/profile.jpg');
+
+  // keep src in sync if profileImage changes (important when editing placeholder JSON)
+  useEffect(() => {
+    setImgSrc(profileImage?.imageUrl ?? '/profile.jpg');
+  }, [profileImage?.imageUrl]);
 
   return (
     <section id="about" className="py-24 sm:py-32 bg-secondary/30 relative overflow-hidden">
@@ -24,7 +33,7 @@ export function AboutSection() {
             About Me
           </h2>
           <TypewriterEffect
-            words={["Hello, I am Vijayaragavan"]}
+            words={['Hello, I am Vijayaragavan']}
             as="p"
             className="text-lg"
             runOnce
@@ -39,23 +48,26 @@ export function AboutSection() {
               {/* soft glow behind the circle */}
               <div className="absolute inset-0 bg-primary rounded-full blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500" />
 
-              {profileImage ? (
-                <div className="relative w-full h-full rounded-full overflow-hidden shadow-2xl shadow-primary/20 transform-gpu transition-transform duration-[10000ms] group-hover:rotate-[360deg] animate-float">
-                  <Image
-                    src={profileImage.imageUrl}
-                    alt={profileImage.description}
-                    width={400}
-                    height={400}
-                    className="object-cover object-center w-full h-full"
-                    data-ai-hint={profileImage.imageHint}
-                  />
-                </div>
-              ) : (
-                // fallback: empty circle if profileImage not found
-                <div className="w-full h-full rounded-full bg-card/40 flex items-center justify-center text-sm text-muted-foreground">
-                  No profile image found
-                </div>
-              )}
+              {/*
+                Render the profile image with a safe fallback.
+                imgSrc is controlled by state so we can set it to /profile.jpg on error.
+              */}
+              <div className="relative w-full h-full rounded-full overflow-hidden shadow-2xl shadow-primary/20 transform-gpu transition-transform duration-[10000ms] group-hover:rotate-[360deg] animate-float">
+                <Image
+                  src={imgSrc}
+                  alt={(profileImage && profileImage.description) || 'Vijayaragavan profile picture'}
+                  width={400}
+                  height={400}
+                  // keep the face centered and fill the circle
+                  className="object-cover object-center w-full h-full"
+                  // when the image fails to load (Firebase Studio preview or other), fallback to /profile.jpg
+                  onError={() => {
+                    if (imgSrc !== '/profile.jpg') setImgSrc('/profile.jpg');
+                  }}
+                  // data hint (keeps existing behavior)
+                  data-ai-hint={profileImage?.imageHint ?? 'Round profile image'}
+                />
+              </div>
 
               {/* thin border ring */}
               <div className="absolute inset-0 border-4 border-primary/50 rounded-full animate-pulse" />
