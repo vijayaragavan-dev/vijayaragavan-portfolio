@@ -71,30 +71,6 @@ export function AboutSection() {
               </div>
             </ScrollArea>
 
-            {/* RESUME BUTTONS (Add Here) */}
-            <div className="mt-8 flex gap-4 justify-center md:justify-start">
-              
-              {/* View Resume */}
-              <a
-                href="/v_ragavan_resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-3 bg-primary text-black rounded-md shadow hover:brightness-105 transition"
-              >
-                View Resume
-              </a>
-
-              {/* Download Resume */}
-              <a
-                href="/v_ragavan_resume.pdf"
-                download="Vijayaragavan_Resume.pdf"
-                className="inline-flex items-center gap-2 px-5 py-3 bg-card/80 text-white rounded-md border border-primary hover:opacity-90 transition"
-              >
-                Download Resume
-              </a>
-
-            </div>
-
           </AnimateInView>
 
         </div>
