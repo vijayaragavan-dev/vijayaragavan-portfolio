@@ -69,7 +69,7 @@ export function Footer() {
           </div>
 
           {/* Column 4: Social Media */}
-          <div className="space-y-4">
+          <div className="space-y-4 pl-4">
             <h4 className="font-semibold text-lg text-foreground transition-all duration-300 hover:text-glow hover:scale-105">Connect With Me</h4>
             <div className="flex gap-4">
               {socialLinks.map(({ icon: Icon, href, name }) => (
