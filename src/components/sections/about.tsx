@@ -4,14 +4,13 @@ import Image from 'next/image';
 import { AnimateInView } from '@/components/animate-in-view';
 import { TypewriterEffect } from '@/components/typewriter';
 import { ScrollArea } from '../ui/scroll-area';
+import placeholderData from '@/lib/placeholder-images.json';
 
 export function AboutSection() {
-  const profileImage = {
-    id: "profile-image",
-    description: "Vijayaragavan's profile picture",
-    imageUrl: "https://images.unsplash.com/photo-1623854182493-9c41743a6c17?q=80&w=400&h=400&fit=crop",
-    imageHint: "portrait man"
-  };
+    const profileImage = placeholderData.placeholderImages.find(
+    (img) => img.id === 'profile-image'
+  );
+
 
   return (
     <section id="about" className="py-24 sm:py-32 bg-secondary/30 relative overflow-hidden">
@@ -47,7 +46,6 @@ export function AboutSection() {
                     alt={profileImage.description}
                     width={400}
                     height={400}
-                    // object-cover keeps the circle filled, object-center centers the face
                     className="object-cover object-center w-full h-full"
                     data-ai-hint={profileImage.imageHint}
                   />
