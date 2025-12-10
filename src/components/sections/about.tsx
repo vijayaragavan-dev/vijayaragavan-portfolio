@@ -3,12 +3,15 @@
 import Image from 'next/image';
 import { AnimateInView } from '@/components/animate-in-view';
 import { TypewriterEffect } from '@/components/typewriter';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { ScrollArea } from '../ui/scroll-area';
 
 export function AboutSection() {
-  // find the image entry with id "profile-image"
-  const profileImage = PlaceHolderImages.find(img => img.id === 'profile-image');
+  const profileImage = {
+    id: "profile-image",
+    description: "Vijayaragavan's profile picture",
+    imageUrl: "https://images.unsplash.com/photo-1623854182493-9c41743a6c17?q=80&w=400&h=400&fit=crop",
+    imageHint: "portrait man"
+  };
 
   return (
     <section id="about" className="py-24 sm:py-32 bg-secondary/30 relative overflow-hidden">

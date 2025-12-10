@@ -2,13 +2,15 @@
 import { useRef, MouseEvent } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
+import placeholderData from '@/lib/placeholder-images.json';
 import { AnimateInView } from '../animate-in-view';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ExternalLink, Github } from 'lucide-react';
 import { TypewriterEffect } from '../typewriter';
+
+const { placeholderImages: PlaceHolderImages } = placeholderData;
 
 const projects = [
   {

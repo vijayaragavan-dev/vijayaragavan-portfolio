@@ -4,12 +4,15 @@ import { Button } from '@/components/ui/button';
 import { AnimateInView } from '../animate-in-view';
 import { ArrowRight, ChevronDown } from 'lucide-react';
 import { TypewriterEffect } from '../typewriter';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 const words = ['A Developer', 'A Programmer', 'A Tech Enthusiast'];
 
 export function HeroSection() {
-  const heroImage = PlaceHolderImages.find(img => img.id === 'hero-image');
+  const heroImage = {
+    imageUrl: "https://images.unsplash.com/photo-1550439062-609e1531270e?q=80&w=1920&h=1080&fit=crop",
+    description: "Hero section background image",
+    imageHint: "abstract code"
+  };
 
   return (
     <section id="home" className="relative w-full h-[100dvh] flex items-center justify-center overflow-hidden">

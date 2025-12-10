@@ -7,7 +7,6 @@ import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Terminal, Braces, Server, Database, Code } from 'lucide-react';
 import { TypewriterEffect } from '../typewriter';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 const skillCategories = [
   {
@@ -93,7 +92,11 @@ function SkillCard({ category, delay }: { category: typeof skillCategories[0], d
 
 
 export function SkillsSection() {
-  const skillsImage = PlaceHolderImages.find(img => img.id === 'skills-background');
+    const skillsImage = {
+        imageUrl: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1920&h=1080&fit=crop",
+        description: "Skills section background image",
+        imageHint: "tech computer"
+    };
   return (
     <section id="skills" className="relative py-24 sm:py-32 overflow-hidden">
         {skillsImage && (
