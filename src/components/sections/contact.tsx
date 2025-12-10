@@ -46,15 +46,6 @@ export function ContactSection() {
                 vijayaragavanvk10@gmail.com
               </a>
             </div>
-            <div>
-              <TypewriterEffect words={["My Resume"]} as="h3" className="text-2xl font-semibold mb-4 font-headline text-center" runOnce />
-              <Button asChild size="lg" variant="outline" className="group">
-                <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer">
-                  Download Resume
-                  <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
-                </Link>
-              </Button>
-            </div>
           </AnimateInView>
         </div>
       </div>
