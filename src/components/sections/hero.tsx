@@ -18,7 +18,7 @@ export function HeroSection() {
           src={heroImage.imageUrl}
           alt={heroImage.description}
           fill
-          className="object-cover transition-transform duration-[5000ms] ease-out group-hover:scale-105"
+          className="object-cover transition-transform duration-[2000ms] ease-out group-hover:scale-105"
           data-ai-hint={heroImage.imageHint}
           priority
         />
@@ -33,7 +33,7 @@ export function HeroSection() {
           </h1>
         </AnimateInView>
         <AnimateInView delay={200}>
-          <TypewriterEffect words={words} staticText="I am" />
+          <TypewriterEffect words={words} staticText="I am" runOnce />
         </AnimateInView>
         <AnimateInView delay={400} className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
           <Button asChild size="lg" className="group transition-transform duration-300 ease-in-out hover:scale-105">
@@ -43,7 +43,7 @@ export function HeroSection() {
             </a>
           </Button>
           <Button asChild size="lg" variant="outline" className="group transition-transform duration-300 ease-in-out hover:scale-105 hover:bg-accent hover:text-accent-foreground">
-            <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+            <Link href="/v_ragavan_resume.pdf" target="_blank" rel="noopener noreferrer">
               View Resume
             </Link>
           </Button>

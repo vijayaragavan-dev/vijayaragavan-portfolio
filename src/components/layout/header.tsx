@@ -14,7 +14,7 @@ const navLinks = [
   { href: '#projects', label: 'Projects' },
   { href: '#skills', label: 'Skills' },
   { href: '#contact', label: 'Contact' },
-  { href: '/resume.pdf', label: 'Resume', external: true },
+  { href: '/v_ragavan_resume.pdf', label: 'Resume', external: true },
 ];
 
 export function Header() {
