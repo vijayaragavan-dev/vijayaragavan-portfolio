@@ -7,10 +7,12 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { ScrollArea } from '../ui/scroll-area';
 
 export function AboutSection() {
+  // find the image entry with id "profile-image"
   const profileImage = PlaceHolderImages.find(img => img.id === 'profile-image');
 
   return (
     <section id="about" className="py-24 sm:py-32 bg-secondary/30 relative overflow-hidden">
+      {/* subtle background gradient layer */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-secondary/20 to-background" />
       <div className="container mx-auto px-4 md:px-6 relative z-10">
 
@@ -32,29 +34,35 @@ export function AboutSection() {
           {/* LEFT IMAGE */}
           <AnimateInView delay={200} className="md:col-span-2 flex justify-center">
             <div className="relative w-64 h-64 sm:w-80 sm:h-80 group">
-              <div className="absolute inset-0 bg-primary rounded-full blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
+              {/* soft glow behind the circle */}
+              <div className="absolute inset-0 bg-primary rounded-full blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500" />
 
-              {profileImage && (
+              {profileImage ? (
                 <div className="relative w-full h-full rounded-full overflow-hidden shadow-2xl shadow-primary/20 transform-gpu transition-transform duration-[10000ms] group-hover:rotate-[360deg] animate-float">
                   <Image
                     src={profileImage.imageUrl}
                     alt={profileImage.description}
                     width={400}
                     height={400}
-                    className="object-cover w-full h-full"
+                    // object-cover keeps the circle filled, object-center centers the face
+                    className="object-cover object-center w-full h-full"
                     data-ai-hint={profileImage.imageHint}
                   />
                 </div>
+              ) : (
+                // fallback: empty circle if profileImage not found
+                <div className="w-full h-full rounded-full bg-card/40 flex items-center justify-center text-sm text-muted-foreground">
+                  No profile image found
+                </div>
               )}
 
+              {/* thin border ring */}
               <div className="absolute inset-0 border-4 border-primary/50 rounded-full animate-pulse" />
             </div>
           </AnimateInView>
 
           {/* RIGHT TEXT */}
           <AnimateInView delay={400} className="md:col-span-3">
-
-            {/* Scrollable Text */}
             <ScrollArea className="h-[250px] w-full pr-4">
               <div className="space-y-6 text-center md:text-left p-4 rounded-lg transition-all duration-300 hover:scale-105 hover:bg-card/50">
                 <h3 className="text-2xl font-semibold font-headline text-glow">
@@ -70,7 +78,6 @@ export function AboutSection() {
                 </p>
               </div>
             </ScrollArea>
-
           </AnimateInView>
 
         </div>
@@ -78,3 +85,4 @@ export function AboutSection() {
     </section>
   );
 }
+export default AboutSection;
