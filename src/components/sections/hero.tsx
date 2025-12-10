@@ -35,19 +35,6 @@ export function HeroSection() {
         <AnimateInView delay={200}>
           <TypewriterEffect words={words} staticText="I am" runOnce />
         </AnimateInView>
-        <AnimateInView delay={400} className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-          <Button asChild size="lg" className="group transition-transform duration-300 ease-in-out hover:scale-105">
-            <a href="#contact">
-              Hire Me
-              <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
-            </a>
-          </Button>
-          <Button asChild size="lg" variant="outline" className="group transition-transform duration-300 ease-in-out hover:scale-105 hover:bg-accent hover:text-accent-foreground">
-            <Link href="/v_ragavan_resume.pdf" target="_blank" rel="noopener noreferrer">
-              View Resume
-            </Link>
-          </Button>
-        </AnimateInView>
       </div>
 
       <a
