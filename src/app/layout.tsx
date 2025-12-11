@@ -15,6 +15,11 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   title: 'Vijayaragavan | Portfolio',
   description: 'Professional portfolio of Vijayaragavan, a passionate developer.',
+  icons: {
+    icon: '/favicon.ico',                   // primary favicon
+    shortcut: '/favicon-32x32.png',         // modern shortcut/icon
+    apple: '/apple-touch-icon.png',         // iOS home screen icon
+  },
 };
 
 export default function RootLayout({
